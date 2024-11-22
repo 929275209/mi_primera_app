@@ -1,5 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:mi_primera_app/my_app_state.dart';
 import 'package:mi_primera_app/providers/my_app_state.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class FavoritesPage extends StatelessWidget {
         ),
         Expanded(
           child: GridView(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 400,
               childAspectRatio: 400 / 80,
             ),

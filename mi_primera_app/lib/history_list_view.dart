@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/my_app_state.dart';
+import 'package:mi_primera_app/providers/my_app_state.dart';
 import 'package:provider/provider.dart';
 
 class HistoryListView extends StatefulWidget {
@@ -28,7 +28,7 @@ class _HistoryListViewState extends State<HistoryListView> {
       child: AnimatedList(
         key: _key,
         reverse: true,
-        padding: EdgeInsets.only(top: 100),
+        padding: const EdgeInsets.only(top: 100),
         initialItemCount: appState.history.length,
         itemBuilder: (context, index, animation) {
           final pair = appState.history[index];
@@ -40,11 +40,12 @@ class _HistoryListViewState extends State<HistoryListView> {
                   appState.toogleFavorite(pair);
                 },
                 icon: appState.favorites.contains(pair)
+                    // ignore: prefer_const_constructors
                     ? Icon(
                         Icons.favorite,
                         size: 12,
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 label: Text(
                   pair.asLowerCase,
                   semanticsLabel: pair.asPascalCase,

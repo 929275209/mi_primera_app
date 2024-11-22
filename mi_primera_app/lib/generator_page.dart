@@ -3,7 +3,7 @@ import 'package:mi_primera_app/history_list_view.dart';
 import 'package:provider/provider.dart';
 
 import 'big_card.dart';
-import 'my_app_state.dart';
+import 'providers/my_app_state.dart';
 
 class GeneratorPage extends StatelessWidget {
   const GeneratorPage({super.key});
@@ -23,13 +23,13 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          const Expanded(
             flex: 3,
             child: HistoryListView(),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           BigCard(pair: pair),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -38,18 +38,18 @@ class GeneratorPage extends StatelessWidget {
                   appState.toogleFavorite(pair);
                 },
                 icon: Icon(icon),
-                label: Text('Me gusta'),
+                label: const Text('Me gusta'),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
                 },
-                child: Text('Siguiente'),
+                child: const Text('Siguiente'),
               ),
             ],
           ),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
         ],
       ),
     );

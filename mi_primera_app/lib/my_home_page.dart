@@ -1,28 +1,6 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-
-// import 'providers/my_app_state.dart';
-
-// class MyHomePage extends StatelessWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     var appState = context.watch<MyAppState>();
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           const Text('A random idea:'),
-//           Text(appState.current.asLowerCase),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:mi_primera_app/favorites_page.dart';
-import 'package:mi_primera_app/generator_page.dart';
+import 'package:my_first_app/generator_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -40,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 0:
         page = GeneratorPage();
       case 1:
-        page = FavoritesPage();
+        page = const FavoritesPage();
       default:
         throw UnimplementedError('No Widget for $selectedIndex');
     }
@@ -54,12 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 SafeArea(
                   child: NavigationRail(
                     extended: constraints.maxWidth >= 600,
+                    // ignore: prefer_const_literals_to_create_immutables
                     destinations: [
-                      NavigationRailDestination(
+                      const NavigationRailDestination(
                         icon: Icon(Icons.home),
                         label: Text('Inicio'),
                       ),
-                      NavigationRailDestination(
+                      const NavigationRailDestination(
                         icon: Icon(Icons.favorite),
                         label: Text('Favoritos'),
                       ),
@@ -79,9 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: constraints.maxWidth >= 600
                         ? Text(
                             '© ${DateTime.now().year} Narmeshit',
-                            style: TextStyle(fontWeight: FontWeight.w500),
+                            style: const TextStyle(fontWeight: FontWeight.w500),
                           )
-                        : Text(
+                        : const Text(
                             '© Nms',
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
